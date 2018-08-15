@@ -33,3 +33,7 @@ class Login(View):
         if not UserInfo.objects.filter(user_num=userNum,user_pw=userPw):
             return render(request, 'login.html',{'flag': 1 })
         return render(request, 'main.html')
+
+
+def main(request,addr):
+    return render(request, 'main.html',{'addr':addr})
