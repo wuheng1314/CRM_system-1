@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'crm.huse_list_context.GetHousE_list',
             ],
         },
     },
@@ -82,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'realty',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': '123123',
         'HOST': '127.0.0.1',
         'PORT': '3306',
 

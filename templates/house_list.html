@@ -97,9 +97,9 @@ for(i=0;i<cs.length;i++){
 
 function add(){
 			//只提交到doGet方法
-			window.location = "http://localhost:8080/crm/servlet/HouseAddServlet";
+			window.location = "";
 		}
-	
+
 </script>
 
 	</head>
@@ -111,21 +111,21 @@ function add(){
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td height="30"
-						background="http://localhost:8080/crm/resource/images/tab_05.gif">
+						background="/static/tab_05.gif">
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
-								<td width="12" height="30">
-									<img src="http://localhost:8080/crm/resource/images/tab_03.gif" width="12"
+								<th width="12" height="30">
+									<img src="/static/tab_03.gif" width="12"
 										height="30" />
-								</td>
-								<td>
+								</th>
+								<th>
 									<table width="100%" border="0" cellspacing="0" cellpadding="0">
 										<tr>
-											<td class="STYLE4" align="center">
+											<th class="STYLE4" align="center">
 												&nbsp;&nbsp;请输入查询信息：
 												<input type="text" name="houseInput" style="width: 290px" />
-											</td>
-											<td class="STYLE4">
+											</th>
+											<th class="STYLE4">
 												&nbsp;&nbsp;请选择查询方式：
 												<select name="queryType" style="width: 100px">
 													<option value="1">
@@ -135,12 +135,12 @@ function add(){
 														房屋地址
 													</option>
 												</select>
-											</td>
-											<td class="STYLE4">
+											</th>
+											<th class="STYLE4">
 												&nbsp;&nbsp;
-												<input type="submit" value="查询" style="width: 50px" />
+												<input type="submit" value="查询" onclick="inquire();" style="width: 50px" />
 												<input   type="hidden"   name="userId"   value="1"  />
-											</td>
+											</th>
 											<td class="STYLE4">
 												&nbsp;&nbsp;
 												<input type="button" value="添加" onclick="add()"
@@ -148,9 +148,9 @@ function add(){
 											</td>
 										</tr>
 									</table>
-								</td>
+								</th>
 								<td width="16">
-									<img src="http://localhost:8080/crm/resource/images/tab_07.gif" width="16"
+									<img src="/static/tab_07.gif" width="16"
 										height="30" />
 								</td>
 							</tr>
@@ -164,7 +164,7 @@ function add(){
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
 								<td width="8"
-									background="http://localhost:8080/crm/resource/images/tab_12.gif">
+									background="/static/tab_12.gif">
 									&nbsp;
 								</td>
 								<td>
@@ -172,393 +172,110 @@ function add(){
 										bgcolor="b5d6e6" onmouseover="changeto()"
 										onmouseout="changeback()">
 										<tr>
-											<td width="3%"
-												background="http://localhost:8080/crm/resource/images/bg2.gif"
+											<th width="3%"
+												background="/static/bg2.gif"
 												bgcolor="#FFFFFF" style="width: 3%; height: 22px;">
 												<div align="center">
 													<span class="STYLE1">序号</span>
 												</div>
-											</td>
-											<td background="http://localhost:8080/crm/resource/images/bg2.gif"
+											</th>
+											<th background="/static/bg2.gif"
 												bgcolor="#FFFFFF" style="width: 10%; height: 22px;">
 												<div align="center">
 													<span class="STYLE1">户型</span>
 												</div>
-											</td>
-											<td background="http://localhost:8080/crm/resource/images/bg2.gif"
+											</th>
+											<th background="/static/bg2.gif"
 												bgcolor="#FFFFFF" style="width: 5%; height: 22px;">
 												<div align="center">
 													<span class="STYLE1">管理员工</span>
 												</div>
-											</td>
-											<td background="http://localhost:8080/crm/resource/images/bg2.gif"
+											</th>
+											<th background="/static/bg2.gif"
 												bgcolor="#FFFFFF" style="width: 20%; height: 22px;">
 												<div align="center">
 													<span class="STYLE1">房屋地址</span>
 												</div>
-											</td>
-											<td background="http://localhost:8080/crm/resource/images/bg2.gif"
+											</th>
+											<th background="/static/bg2.gif"
 												bgcolor="#FFFFFF" style="width: 10%; height: 22px;">
 												<div align="center">
 													<span class="STYLE1">房屋价格(平米)</span>
 												</div>
-											</td>
-											<td background="http://localhost:8080/crm/resource/images/bg2.gif"
+											</th>
+											<th background="/static/bg2.gif"
 												bgcolor="#FFFFFF" style="width: 30%; height: 22px;">
 												<div align="center">
 													<span class="STYLE1">房屋环境</span>
 												</div>
-											</td>
-											<td width="20%"
-												background="http://localhost:8080/crm/resource/images/bg2.gif"
+											</th>
+											<th width="20%"
+												background="/static/bg2.gif"
 												bgcolor="#FFFFFF" class="STYLE1"
 												style="width: 20%; height: 22px;">
 												<div align="center">
 													基本操作
 												</div>
-											</td>
+											</th>
 										</tr>
 										
+                                    {% for house in house_list %}
+                                        <tr>
+                                                                                <td height="20" bgcolor="#FFFFFF" style="width: 3%">
+                                                                                    <div align="center" class="STYLE1">
+                                                                                        <div align="center">
+                                                                                            {{ forloop.counter }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td height="20" bgcolor="#FFFFFF" style="width: 10%">
+                                                                                    <div align="center">
+                                                                                        <span class="STYLE1">{{ house.type.type_name }}</span>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td height="20" bgcolor="#FFFFFF" style="width: 10%">
+                                                                                    <div align="center">
+                                                                                        <span class="STYLE1">{{ house.user.user_name }}</span>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td height="20" bgcolor="#FFFFFF" style="width: 20%">
+                                                                                    <div align="center">
+                                                                                        <span class="STYLE1">{{ house.house_address }}</span>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td height="20" bgcolor="#FFFFFF" style="width: 10%">
+                                                                                    <div align="center">
+                                                                                        <span class="STYLE1">{{ house.house_price }}</span>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td height="20" bgcolor="#FFFFFF" style="width: 20%">
+                                                                                    <div align="center">
+                                                                                        <span class="STYLE1">{{ house.house_ambient }}</span>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td height="20" bgcolor="#FFFFFF" style="width: 20%">
+                                                                                    <div align="center">
+                                                                                        <span class="STYLE4"> <img
+                                                                                                src="/static/edt.gif" width="16"
+                                                                                                height="16" /> <a
+                                                                                            href="http://localhost:8080/crm/servlet/HouseUpdateServlet?houseId=7"">编辑</a>&nbsp;
+                                                                                            &nbsp; <img src="/static/del.gif"
+                                                                                                width="16" height="16" /><a
+                                                                                            href="http://localhost:8080/crm/servlet/HouseDeleteServlet?houseId=7">删除</a>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                    {% endfor %}
 
-										<tr>
-											<td height="20" bgcolor="#FFFFFF" style="width: 3%">
-												<div align="center" class="STYLE1">
-													<div align="center">
-														1
-													</div>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">三室一厅</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">张三</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">三峡学院</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">500.0</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">你猜！</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE4"> <img
-															src="http://localhost:8080/crm/resource/images/edt.gif" width="16"
-															height="16" /> <a
-														href="http://localhost:8080/crm/servlet/HouseUpdateServlet?houseId=7"">编辑</a>&nbsp;
-														&nbsp; <img src="http://localhost:8080/crm/resource/images/del.gif"
-															width="16" height="16" /><a
-														href="http://localhost:8080/crm/servlet/HouseDeleteServlet?houseId=7">删除</a>
-													</span>
-												</div>
-											</td>
-										</tr>
+
 										
 
-										<tr>
-											<td height="20" bgcolor="#FFFFFF" style="width: 3%">
-												<div align="center" class="STYLE1">
-													<div align="center">
-														2
-													</div>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">三室一厅</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">孙悟空</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">2000</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">500.0</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">gh </span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE4"> <img
-															src="http://localhost:8080/crm/resource/images/edt.gif" width="16"
-															height="16" /> <a
-														href="http://localhost:8080/crm/servlet/HouseUpdateServlet?houseId=8"">编辑</a>&nbsp;
-														&nbsp; <img src="http://localhost:8080/crm/resource/images/del.gif"
-															width="16" height="16" /><a
-														href="http://localhost:8080/crm/servlet/HouseDeleteServlet?houseId=8">删除</a>
-													</span>
-												</div>
-											</td>
-										</tr>
-										
-
-										<tr>
-											<td height="20" bgcolor="#FFFFFF" style="width: 3%">
-												<div align="center" class="STYLE1">
-													<div align="center">
-														3
-													</div>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">三室一厅</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">张三</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">重庆云烟</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">111.0</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">这里是结婚生子的好地方</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE4"> <img
-															src="http://localhost:8080/crm/resource/images/edt.gif" width="16"
-															height="16" /> <a
-														href="http://localhost:8080/crm/servlet/HouseUpdateServlet?houseId=9"">编辑</a>&nbsp;
-														&nbsp; <img src="http://localhost:8080/crm/resource/images/del.gif"
-															width="16" height="16" /><a
-														href="http://localhost:8080/crm/servlet/HouseDeleteServlet?houseId=9">删除</a>
-													</span>
-												</div>
-											</td>
-										</tr>
-										
-
-										<tr>
-											<td height="20" bgcolor="#FFFFFF" style="width: 3%">
-												<div align="center" class="STYLE1">
-													<div align="center">
-														4
-													</div>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">三室一厅</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">蒋元征</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">重庆万州</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">1200.0</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">案发大发第三方</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE4"> <img
-															src="http://localhost:8080/crm/resource/images/edt.gif" width="16"
-															height="16" /> <a
-														href="http://localhost:8080/crm/servlet/HouseUpdateServlet?houseId=10"">编辑</a>&nbsp;
-														&nbsp; <img src="http://localhost:8080/crm/resource/images/del.gif"
-															width="16" height="16" /><a
-														href="http://localhost:8080/crm/servlet/HouseDeleteServlet?houseId=10">删除</a>
-													</span>
-												</div>
-											</td>
-										</tr>
-										
-
-										<tr>
-											<td height="20" bgcolor="#FFFFFF" style="width: 3%">
-												<div align="center" class="STYLE1">
-													<div align="center">
-														5
-													</div>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">三室一厅</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">张三</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">重庆万州</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">234.0</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1"></span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE4"> <img
-															src="http://localhost:8080/crm/resource/images/edt.gif" width="16"
-															height="16" /> <a
-														href="http://localhost:8080/crm/servlet/HouseUpdateServlet?houseId=11"">编辑</a>&nbsp;
-														&nbsp; <img src="http://localhost:8080/crm/resource/images/del.gif"
-															width="16" height="16" /><a
-														href="http://localhost:8080/crm/servlet/HouseDeleteServlet?houseId=11">删除</a>
-													</span>
-												</div>
-											</td>
-										</tr>
-										
-
-										<tr>
-											<td height="20" bgcolor="#FFFFFF" style="width: 3%">
-												<div align="center" class="STYLE1">
-													<div align="center">
-														6
-													</div>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">三室一厅</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">蒋元征</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">重庆万州</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">1200.0</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">5555</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE4"> <img
-															src="http://localhost:8080/crm/resource/images/edt.gif" width="16"
-															height="16" /> <a
-														href="http://localhost:8080/crm/servlet/HouseUpdateServlet?houseId=12"">编辑</a>&nbsp;
-														&nbsp; <img src="http://localhost:8080/crm/resource/images/del.gif"
-															width="16" height="16" /><a
-														href="http://localhost:8080/crm/servlet/HouseDeleteServlet?houseId=12">删除</a>
-													</span>
-												</div>
-											</td>
-										</tr>
-										
-
-										<tr>
-											<td height="20" bgcolor="#FFFFFF" style="width: 3%">
-												<div align="center" class="STYLE1">
-													<div align="center">
-														7
-													</div>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">三室两厅</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">王五</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">滨江路</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 10%">
-												<div align="center">
-													<span class="STYLE1">10000.0</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE1">很好啦！都来看看啊！</span>
-												</div>
-											</td>
-											<td height="20" bgcolor="#FFFFFF" style="width: 20%">
-												<div align="center">
-													<span class="STYLE4"> <img
-															src="http://localhost:8080/crm/resource/images/edt.gif" width="16"
-															height="16" /> <a
-														href="http://localhost:8080/crm/servlet/HouseUpdateServlet?houseId=6"">编辑</a>&nbsp;
-														&nbsp; <img src="http://localhost:8080/crm/resource/images/del.gif"
-															width="16" height="16" /><a
-														href="http://localhost:8080/crm/servlet/HouseDeleteServlet?houseId=6">删除</a>
-													</span>
-												</div>
-											</td>
-										</tr>
 										
 									</table>
 								</td>
 								<td width="8"
-									background="http://localhost:8080/crm/resource/images/tab_15.gif">
+									background="/static/tab_15.gif">
 									&nbsp;
 								</td>
 							</tr>
@@ -568,11 +285,11 @@ function add(){
 
 				<tr>
 					<td height="35"
-						background="http://localhost:8080/crm/resource/images/tab_19.gif">
+						background="/static/tab_19.gif">
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
 								<td width="12" height="35">
-									<img src="http://localhost:8080/crm/resource/images/tab_18.gif" width="12"
+									<img src="/static/tab_18.gif" width="12"
 										height="35" />
 								</td>
 								<td>
@@ -586,19 +303,19 @@ function add(){
 													cellspacing="0">
 													<tr>
 														<td width="40">
-															<img src="http://localhost:8080/crm/resource/images/first.gif"
+															<img src="/static/first.gif"
 																width="37" height="15" />
 														</td>
 														<td width="45">
-															<img src="http://localhost:8080/crm/resource/images/back.gif"
+															<img src="/static/back.gif"
 																width="43" height="15" />
 														</td>
 														<td width="45">
-															<img src="http://localhost:8080/crm/resource/images/next.gif"
+															<img src="/static/next.gif"
 																width="43" height="15" />
 														</td>
 														<td width="40">
-															<img src="http://localhost:8080/crm/resource/images/last.gif"
+															<img src="/static/last.gif"
 																width="37" height="15" />
 														</td>
 														<td width="100">
@@ -610,7 +327,7 @@ function add(){
 															</div>
 														</td>
 														<td width="40">
-															<img src="http://localhost:8080/crm/resource/images/go.gif" width="37"
+															<img src="/static/go.gif" width="37"
 																height="15" />
 														</td>
 													</tr>
@@ -620,7 +337,7 @@ function add(){
 									</table>
 								</td>
 								<td width="16">
-									<img src="http://localhost:8080/crm/resource/images/tab_20.gif" width="16"
+									<img src="/static/tab_20.gif" width="16"
 										height="35" />
 								</td>
 							</tr>
