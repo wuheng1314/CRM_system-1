@@ -66,8 +66,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
-        },
+                'crm.mycontextprocessor.noticeList',
+                'crm.mycontextprocessor.deptList',
+                'crm.mycontextprocessor.roleList',
+                'crm.mycontextprocessor.userList',
+                'crm.mycontextprocessor.userNameList',
+            ]
+        }
     },
 ]
 
