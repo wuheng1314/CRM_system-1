@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加房屋信息</title>
+{#    安子#}
+</head>
+<script type="text/javascript">
+    function sb(){
+         var price = document.getElementById("price");
+         var reg_price = /^[1-9]\d{2,5}[+]{0,1}$/;  //以1-9开头，后面还有【0-9】即\d二到五个数字，末尾可以有0到1个+号 总共最多7个字符 如123456+
+         var input_text=price.value;//获取id 为money输入框的内容
+         var mess = reg_price.test(input_text)?"输入符合规格!":"房屋价格请输入数字";//为匹配结果信息赋值
+         alert(mess);//打印测试
+       }
+    function abcde(){
+        window.location = "/crm/house_list.html/";
+    }
+</script>
+<body>
+<form  action="/crm/houselist/" method="post">
+   {% csrf_token %}
+         <hr>
+         <h3>房屋信息添加：{{ abc }}{{ efg }}</h3>
+         <hr>
+         <table>
+             <tr><hr></tr>
+             <tr>
+                 <td colspan="2">添加人:
+
+                    <select name="username">
+                         {% for user in user_list %}
+                               <option  value="{{ user.user_id }}">{{ user.user_name }}</option>
+                         {% endfor %}
+                     </select>
+                 </td>
+             </tr>
+             <tr>
+                 <td ><hr></td>
+                 <td ><hr></td>
+                 <td ><hr></td>
+             </tr>
+             <tr>
+                 <td>房屋类型: <select name="type" >
+                         {% for type in house_type_list %}
+                                <option value="{{ type.type_id }}">{{ type.type_name  }}</option>
+                         {% endfor %}
+                     </select>
+                 </td>
+                 <td>房屋地址: </td><td><input type="text" name="houseaddr"></td>
+             </tr>
+             <tr>
+                 <td>房屋价格: <input type="text" id="price" name="house_price" onblur="sb()"></td>
+                 <td>房屋环境: </td><td><input type="text" name="house_en"></td>
+             </tr>
+             <tr>
+                 <td ><hr></td>
+                 <td ><hr></td>
+                 <td ><hr></td>
+             </tr>
+              <tr>
+                 <td ><hr></td>
+                 <td ><hr></td>
+                 <td ><hr></td>
+              </tr>
+             <tr>
+                <td> &emsp;&emsp;<input type="submit" value="提交添加"></td>
+                 <td>&emsp;&emsp;<input type="button" value="返回列表" onclick="abcde()"></td>
+             </tr>
+         </table>
+     </form>
+</body>
+</html>
