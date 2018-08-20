@@ -2,7 +2,7 @@
 <html>
   <head>
       <meta charset="UTF-8">
-    <base href="http://localhost:8080/crm/">
+{#    <base href="http://localhost:8080/crm/">#}
     
     <title>查询员工信息</title>
     
@@ -96,9 +96,9 @@ for(i=0;i<cs.length;i++){
   	<form  action="http://localhost:8080/crm/servlet/UserQueryServlet" method="post">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
-    <td height="30" background="http://localhost:8080/crm/resource/images/tab_05.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <td height="30" background="/static/tab_05.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="12" height="30"><img src="http://localhost:8080/crm/resource/images/tab_03.gif" width="12" height="30" /></td>
+        <td width="12" height="30"><img src="/static/tab_03.gif" width="12" height="30" /></td>
                 <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td class="STYLE4" align="center">&nbsp;&nbsp;请输入查询内容：<input type="text" name="userName" style="width: 290px"/></td>
@@ -112,7 +112,7 @@ for(i=0;i<cs.length;i++){
             <td class="STYLE4">&nbsp;&nbsp;<input  type="button" value="查询" style="width:50px"/></td>            
           </tr>
         </table></td>
-        <td width="16"><img src="http://localhost:8080/crm/resource/images/tab_07.gif" width="16" height="30" /></td>
+        <td width="16"><img src="/static/tab_07.gif" width="16" height="30" /></td>
       </tr>
     </table></td>
   </tr>
@@ -121,23 +121,23 @@ for(i=0;i<cs.length;i++){
   <tr>
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="8" background="http://localhost:8080/crm/resource/images/tab_12.gif">&nbsp;</td>
+        <td width="8" background="/static/tab_12.gif">&nbsp;</td>
         <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="b5d6e6" onmouseover="changeto()"  onmouseout="changeback()">
           <tr>
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 3%"><div align="center"><span class="STYLE1">序号</span></div></td>
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1">姓名</span></div></td>
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 3%"><div align="center"><span class="STYLE1">性别</span></div></td>
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width:3%"><div align="center"><span class="STYLE1">年龄</span></div></td>
-	    	<td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width:3%"><div align="center"><span class="STYLE1">民族</span></div></td>
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1">部门</span></div></td> 
-	    	<td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1">角色</span></div></td>
-	    	<td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1">学历</span></div></td>
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1">婚姻</span></div></td>
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 15%"><div align="center"><span class="STYLE1">家庭地址</span></div></td>
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 10%"><div align="center"><span class="STYLE1">手机</span></div></td>
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 9%"><div align="center"><span class="STYLE1">电话</span></div></td>
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" style="width: 15%"><div align="center"><span class="STYLE1">邮箱</span></div></td>      
-            <td height="22" background="http://localhost:8080/crm/resource/images/bg2.gif" bgcolor="#FFFFFF" class="STYLE1" style="width: 14%"><div align="center">基本操作</div></td>
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 3%"><div align="center"><span class="STYLE1">序号</span></div></td>
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1">姓名</span></div></td>
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 3%"><div align="center"><span class="STYLE1">性别</span></div></td>
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width:3%"><div align="center"><span class="STYLE1">年龄</span></div></td>
+	    	<td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width:3%"><div align="center"><span class="STYLE1">民族</span></div></td>
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1">部门</span></div></td> 
+	    	<td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1">角色</span></div></td>
+	    	<td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1">学历</span></div></td>
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 5%"><div align="center"><span class="STYLE1">婚姻</span></div></td>
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 15%"><div align="center"><span class="STYLE1">家庭地址</span></div></td>
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 10%"><div align="center"><span class="STYLE1">手机</span></div></td>
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 9%"><div align="center"><span class="STYLE1">电话</span></div></td>
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" style="width: 15%"><div align="center"><span class="STYLE1">邮箱</span></div></td>      
+            <td height="22" background="/static/bg2.gif" bgcolor="#FFFFFF" class="STYLE1" style="width: 14%"><div align="center">基本操作</div></td>
           </tr>
           
           
@@ -158,9 +158,9 @@ for(i=0;i<cs.length;i++){
    	    	<td height="20" bgcolor="#FFFFFF" style="width: 10%"><div align="center"><span class="STYLE1">13525452584 </span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width: 9%"><div align="center"><span class="STYLE1">52000112</span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width:1 5%"><div align="center"><span class="STYLE1">3797687@qq.com</span></div></td>
-            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="http://localhost:8080/crm/resource/images/del.gif" width="16" height="16" />
+            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="/static/edt.gif" width="16" height="16" />
+            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="/static/edt.gif" width="16" height="16" />
+            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="/static/del.gif" width="16" height="16" />
             <a      href="http://localhost:8080/crm/servlet/UserDeleteServlet?id=1">删除</a></span></div></td>
           </tr>
           
@@ -181,9 +181,9 @@ for(i=0;i<cs.length;i++){
    	    	<td height="20" bgcolor="#FFFFFF" style="width: 10%"><div align="center"><span class="STYLE1">15923219017 </span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width: 9%"><div align="center"><span class="STYLE1">58105789</span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width:1 5%"><div align="center"><span class="STYLE1">253507692@qq.com</span></div></td>
-            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="http://localhost:8080/crm/resource/images/del.gif" width="16" height="16" />
+            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="/static/edt.gif" width="16" height="16" />
+            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="/static/edt.gif" width="16" height="16" />
+            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="/static/del.gif" width="16" height="16" />
             <a      href="http://localhost:8080/crm/servlet/UserDeleteServlet?id=6">删除</a></span></div></td>
           </tr>
           
@@ -204,9 +204,9 @@ for(i=0;i<cs.length;i++){
    	    	<td height="20" bgcolor="#FFFFFF" style="width: 10%"><div align="center"><span class="STYLE1">15923219011 </span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width: 9%"><div align="center"><span class="STYLE1">58105744</span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width:1 5%"><div align="center"><span class="STYLE1">253507692@qq.com</span></div></td>
-            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="http://localhost:8080/crm/resource/images/del.gif" width="16" height="16" />
+            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="/static/edt.gif" width="16" height="16" />
+            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="/static/edt.gif" width="16" height="16" />
+            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="/static/del.gif" width="16" height="16" />
             <a      href="http://localhost:8080/crm/servlet/UserDeleteServlet?id=7">删除</a></span></div></td>
           </tr>
           
@@ -227,9 +227,9 @@ for(i=0;i<cs.length;i++){
    	    	<td height="20" bgcolor="#FFFFFF" style="width: 10%"><div align="center"><span class="STYLE1">13254545454 </span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width: 9%"><div align="center"><span class="STYLE1">22323244</span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width:1 5%"><div align="center"><span class="STYLE1">87592@qq.com</span></div></td>
-            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="http://localhost:8080/crm/resource/images/del.gif" width="16" height="16" />
+            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="/static/edt.gif" width="16" height="16" />
+            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="/static/edt.gif" width="16" height="16" />
+            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="/static/del.gif" width="16" height="16" />
             <a      href="http://localhost:8080/crm/servlet/UserDeleteServlet?id=3">删除</a></span></div></td>
           </tr>
           
@@ -250,9 +250,9 @@ for(i=0;i<cs.length;i++){
    	    	<td height="20" bgcolor="#FFFFFF" style="width: 10%"><div align="center"><span class="STYLE1">13545454545 </span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width: 9%"><div align="center"><span class="STYLE1">54584785</span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width:1 5%"><div align="center"><span class="STYLE1">39547@qq.com</span></div></td>
-            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="http://localhost:8080/crm/resource/images/del.gif" width="16" height="16" />
+            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="/static/edt.gif" width="16" height="16" />
+            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="/static/edt.gif" width="16" height="16" />
+            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="/static/del.gif" width="16" height="16" />
             <a      href="http://localhost:8080/crm/servlet/UserDeleteServlet?id=4">删除</a></span></div></td>
           </tr>
           
@@ -273,39 +273,39 @@ for(i=0;i<cs.length;i++){
    	    	<td height="20" bgcolor="#FFFFFF" style="width: 10%"><div align="center"><span class="STYLE1">13544477747 </span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width: 9%"><div align="center"><span class="STYLE1">52000112</span></div></td>
             <td height="20" bgcolor="#FFFFFF" style="width:1 5%"><div align="center"><span class="STYLE1">3963547@qq.com</span></div></td>
-            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16" />
-            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="http://localhost:8080/crm/resource/images/del.gif" width="16" height="16" />
+            <td height="20" bgcolor="#FFFFFF" style="width: 14%"><div align="center"><span class="STYLE4"><img        src="/static/edt.gif" width="16" height="16" />
+            <a       href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="/static/edt.gif" width="16" height="16" />
+            <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img     src="/static/del.gif" width="16" height="16" />
             <a      href="http://localhost:8080/crm/servlet/UserDeleteServlet?id=5">删除</a></span></div></td>
           </tr>
           
           </table></td>
-        <td width="8" background="http://localhost:8080/crm/resource/images/tab_15.gif">&nbsp;</td>
+        <td width="8" background="/static/tab_15.gif">&nbsp;</td>
       </tr>
     </table></td>
   </tr>
   <tr>
-    <td height="35" background="http://localhost:8080/crm/resource/images/tab_19.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <td height="35" background="/static/tab_19.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="12" height="35"><img src="http://localhost:8080/crm/resource/images/tab_18.gif" width="12" height="35" /></td>
+        <td width="12" height="35"><img src="/static/tab_18.gif" width="12" height="35" /></td>
         <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td class="STYLE4">&nbsp;&nbsp;共有 6 条记录，当前第 1/1 页</td>
             <td><table border="0" align="right" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td width="40"><img src="http://localhost:8080/crm/resource/images/first.gif" width="37" height="15" /></td>
-                  <td width="45"><img src="http://localhost:8080/crm/resource/images/back.gif" width="43" height="15" /></td>
-                  <td width="45"><img src="http://localhost:8080/crm/resource/images/next.gif" width="43" height="15" /></td>
-                  <td width="40"><img src="http://localhost:8080/crm/resource/images/last.gif" width="37" height="15" /></td>
+                  <td width="40"><img src="/static/first.gif" width="37" height="15" /></td>
+                  <td width="45"><img src="/static/back.gif" width="43" height="15" /></td>
+                  <td width="45"><img src="/static/next.gif" width="43" height="15" /></td>
+                  <td width="40"><img src="/static/last.gif" width="37" height="15" /></td>
                   <td width="100"><div align="center"><span class="STYLE1">转到第
                     <input name="textfield" type="text" size="4" style="height:12px; width:20px; border:1px solid #999999;" /> 
                     页 </span></div></td>
-                  <td width="40"><img src="http://localhost:8080/crm/resource/images/go.gif" width="37" height="15" /></td>
+                  <td width="40"><img src="/static/go.gif" width="37" height="15" /></td>
                 </tr>
             </table></td>
           </tr>
         </table></td>
-        <td width="16"><img src="http://localhost:8080/crm/resource/images/tab_20.gif" width="16" height="35" /></td>
+        <td width="16"><img src="/static/tab_20.gif" width="16" height="35" /></td>
       </tr>
     </table></td>
   </tr>

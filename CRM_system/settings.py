@@ -53,7 +53,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'CRM_system.urls'
-
+# APPEND_SLASH = False
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -66,8 +66,18 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
-        },
+                #小安
+                'crm.huse_list_context.GetHousE_list',
+                'crm.huse_list_context.GetUserInfo',
+                'crm.huse_list_context.GetHouseType',
+                 #小陈
+                'crm.mycontextprocessor.noticeList',
+                'crm.mycontextprocessor.deptList',
+                'crm.mycontextprocessor.roleList',
+                'crm.mycontextprocessor.userList',
+                'crm.mycontextprocessor.userNameList',
+            ]
+        }
     },
 ]
 
@@ -82,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'realty',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': '123123',
         'HOST': '127.0.0.1',
         'PORT': '3306',
 
@@ -121,7 +131,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/

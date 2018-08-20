@@ -1,3 +1,4 @@
+#coding=utf-8
 # This is an auto-generated Django model module.
 # You'll have to do the following manually to clean this up:
 #   * Rearrange models' order
@@ -167,7 +168,8 @@ class HouseInfo(models.Model):
     class Meta:
         
         db_table = 'house_info'
-
+    def __unicode__(self):
+        return u'HouseInfo:%s,%s,%s'%(self.type,self.user,self.house_address)
 
 class HouseType(models.Model):
     type_id = models.AutoField(primary_key=True)
