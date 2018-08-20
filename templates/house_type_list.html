@@ -6,7 +6,7 @@
 <html>
 	<head>
         <meta charset="UTF-8">
-		<base href="http://localhost:8080/crm/">
+{#		<base href="http://localhost:8080/crm/">#}
 
 		<title>My JSP 'customerCondition_list.jsp' starting page</title>
 
@@ -50,8 +50,7 @@ A:hover {
 }
 -->
 </style>
-
-		<script>
+        <script>
 var  highlightcolor='#c1ebff';
 //此处clickcolor只能用win系统颜色代码才能成功,如果用#xxxxxx的代码就不行,还没搞清楚为什么:(
 var  clickcolor='#51b2f6';
@@ -99,25 +98,26 @@ for(i=0;i<cs.length;i++){
 }
 }
 </script>
-<script type="text/javascript">
-	function add(){  
-			window.location="http://localhost:8080/crm/view/houseType/houseType_add.jsp";
-		}
-
-</script>
+{#<script type="text/javascript">#}
+{#	function add(){  #}
+{#			window.location="";#}
+{#		}#}
+{##}
+{#</script>#}
 </head>
 
 	<body>
 	
 	
-	<form action="http://localhost:8080/crm/servlet/HouseTypeQueryServlet"  method="post">
+	<form action="/crm/dem/"  method="get">
+
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td height="30" background="http://localhost:8080/crm/resource/images/tab_05.gif">
+				<td height="30" background="/static/tab_05.gif">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td width="12" height="30">
-								<img src="http://localhost:8080/crm/resource/images/tab_03.gif" width="12"
+								<img src="/static/tab_03.gif" width="12"
 									height="30" />
 							</td>
 							<td>
@@ -127,19 +127,19 @@ for(i=0;i<cs.length;i++){
 											&nbsp;&nbsp;请输入房屋类型名称：
 											<input type="text" name="houseTypeName" style="width: 290px" />
 										</td>
-										<td class="STYLE4">
-											&nbsp;&nbsp;
-											<input type="submit" value="查询" style="width: 50px" />
-										</td>
+{#										<td class="STYLE4">#}
+{#											&nbsp;&nbsp;#}
+{#											<input type="submit" value="查询" style="width: 50px" />#}
+{#										</td>#}
 										<td  class="STYLE4">
 											&nbsp;&nbsp;
-											<input type="button" value="添加" onclick="add()" style="width: 50px" />
+											<input type="submit" value="添加"  style="width: 50px" />
 										</td>
 									</tr>
 								</table>
 							</td>
 							<td width="16">
-								<img src="http://localhost:8080/crm/resource/images/tab_07.gif" width="16"
+								<img src="/static/tab_07.gif" width="16"
 									height="30" />
 							</td>
 						</tr>
@@ -153,7 +153,7 @@ for(i=0;i<cs.length;i++){
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td width="8"
-								background="http://localhost:8080/crm/resource/images/tab_12.gif">
+								background="/static/tab_12.gif">
 								&nbsp;
 							</td>
 							<td>
@@ -162,20 +162,20 @@ for(i=0;i<cs.length;i++){
 									onmouseout="changeback()">
 									<tr>
 										<td width="5%"
-											background="http://localhost:8080/crm/resource/images/bg2.gif"
+											background="/static/bg2.gif"
 											bgcolor="#FFFFFF" style="width: 5%; height: 22px;">
 											<div align="center">
 												<span class="STYLE1">序号</span>
 											</div>
 										</td>
-										<td background="http://localhost:8080/crm/resource/images/bg2.gif"
+										<td background="/static/bg2.gif"
 											bgcolor="#FFFFFF" style="width: 85%; height: 22px;">
 											<div align="center">
 												<span class="STYLE1">房屋类型名称</span>
 											</div>
 										</td>
 										<td      width="10%"
-											background="http://localhost:8080/crm/resource/images/bg2.gif"
+											background="/static/bg2.gif"
 											bgcolor="#FFFFFF" class="STYLE1"
 											style="width: 10%; height: 22px;">
 											<div align="center">
@@ -183,175 +183,75 @@ for(i=0;i<cs.length;i++){
 											</div>
 										</td>
 									</tr>
-				
 
+                                    {% for f in housenamelist %}
 									<tr>
 										<td height="20" bgcolor="#FFFFFF" style="width: 5%">
 											<div align="center" class="STYLE1">
 												<div align="center">
-													1
+													{{ forloop.counter }}
 												</div>
 											</div>
 										</td>
 										<td height="20" bgcolor="#FFFFFF" style="width: 85%">
 											<div align="center">
-												<span class="STYLE1">三室一厅</span>
+												<span class="STYLE1">{{ f.type_name }}</span>
 											</div>
 										</td>
 										<td      height="20" bgcolor="#FFFFFF" style="width: 10%">
 											<div align="center">
-												<span class="STYLE4"><img src="http://localhost:8080/crm/resource/images/del.gif"
-														width="16" height="16" /><a
-													href="http://localhost:8080/crm/servlet/HouseTypeDeleteServlet?houseTypeId=1">删除</a>
+												<span class="STYLE4">
+                                                    <img src="/static/del.gif"
+														width="16" height="16" />
+                                                    <a href="/crm/dem2/{{ f.type_id }}">删除</a>
 												</span>
 											</div>
 										</td>
 									</tr>
-									
-
-									<tr>
-										<td height="20" bgcolor="#FFFFFF" style="width: 5%">
-											<div align="center" class="STYLE1">
-												<div align="center">
-													2
-												</div>
-											</div>
-										</td>
-										<td height="20" bgcolor="#FFFFFF" style="width: 85%">
-											<div align="center">
-												<span class="STYLE1">三室两厅</span>
-											</div>
-										</td>
-										<td      height="20" bgcolor="#FFFFFF" style="width: 10%">
-											<div align="center">
-												<span class="STYLE4"><img src="http://localhost:8080/crm/resource/images/del.gif"
-														width="16" height="16" /><a
-													href="http://localhost:8080/crm/servlet/HouseTypeDeleteServlet?houseTypeId=2">删除</a>
-												</span>
-											</div>
-										</td>
-									</tr>
-									
-
-									<tr>
-										<td height="20" bgcolor="#FFFFFF" style="width: 5%">
-											<div align="center" class="STYLE1">
-												<div align="center">
-													3
-												</div>
-											</div>
-										</td>
-										<td height="20" bgcolor="#FFFFFF" style="width: 85%">
-											<div align="center">
-												<span class="STYLE1">两室一厅</span>
-											</div>
-										</td>
-										<td      height="20" bgcolor="#FFFFFF" style="width: 10%">
-											<div align="center">
-												<span class="STYLE4"><img src="http://localhost:8080/crm/resource/images/del.gif"
-														width="16" height="16" /><a
-													href="http://localhost:8080/crm/servlet/HouseTypeDeleteServlet?houseTypeId=3">删除</a>
-												</span>
-											</div>
-										</td>
-									</tr>
-									
-
-									<tr>
-										<td height="20" bgcolor="#FFFFFF" style="width: 5%">
-											<div align="center" class="STYLE1">
-												<div align="center">
-													4
-												</div>
-											</div>
-										</td>
-										<td height="20" bgcolor="#FFFFFF" style="width: 85%">
-											<div align="center">
-												<span class="STYLE1">四室两厅</span>
-											</div>
-										</td>
-										<td      height="20" bgcolor="#FFFFFF" style="width: 10%">
-											<div align="center">
-												<span class="STYLE4"><img src="http://localhost:8080/crm/resource/images/del.gif"
-														width="16" height="16" /><a
-													href="http://localhost:8080/crm/servlet/HouseTypeDeleteServlet?houseTypeId=4">删除</a>
-												</span>
-											</div>
-										</td>
-									</tr>
-									
-								</table>
-							</td>	
-							<td width="8"
-								background="http://localhost:8080/crm/resource/images/tab_15.gif">
-								&nbsp;
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			
+			                         {% endfor %}
 			<tr>
-				<td height="35" background="http://localhost:8080/crm/resource/images/tab_19.gif">
-					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<td height="30" background="/static/tab_19.gif" colspan="3">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
 						<tr>
-							<td width="12" height="35">
-								<img src="http://localhost:8080/crm/resource/images/tab_18.gif" width="12"
-									height="35" />
-							</td>
+{#							<td width="12" height="30">#}
+{#								<img src="/static/tab_18.gif" width="12"#}
+{#									height="35" />#}
+{#							</td>#}
 							<td>
 								<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tr>
 										<td class="STYLE4">
-											&nbsp;&nbsp;共有 4 条记录，当前第 1/1 页
+											&nbsp;&nbsp;共有 {{ housenamelist|length }} 条记录，当前第 1/1 页
 										</td>
 										<td>
 											<table border="0" align="right" cellpadding="0"
 												cellspacing="0">
-												<tr>
-													<td width="40">
-														<img src="http://localhost:8080/crm/resource/images/first.gif"
-															width="37" height="15" />
-													</td>
-													<td width="45">
-														<img src="http://localhost:8080/crm/resource/images/back.gif"
-															width="43" height="15" />
-													</td>
-													<td width="45">
-														<img src="http://localhost:8080/crm/resource/images/next.gif"
-															width="43" height="15" />
-													</td>
-													<td width="40">
-														<img src="http://localhost:8080/crm/resource/images/last.gif"
-															width="37" height="15" />
-													</td>
-													<td width="100">
-														<div align="center">
-															<span class="STYLE1">转到第 <input name="textfield"
-																	type="text" size="4"
-																	style="height: 12px; width: 20px; border: 1px solid #999999;" />
-																页 </span>
-														</div>
-													</td>
-													<td width="40">
-														<img src="http://localhost:8080/crm/resource/images/go.gif" width="37"
-															height="15" />
-													</td>
-												</tr>
+{#                                                    <td width="40">#}
+{#														<img src="/static/last.gif"#}
+{#															width="37" height="15" />#}
+{#													</td>#}
+{#													<td width="100">#}
+{#														<div align="center">#}
+{#															<span class="STYLE1">转到第 <input name="textfield"#}
+{#																	type="text" size="4"#}
+{#																	style="height: 12px; width: 20px; border: 1px solid #999999;" />#}
+{#																页 </span>#}
+{#														</div>#}
+{#													</td>#}
 											</table>
 										</td>
 									</tr>
 								</table>
 							</td>
-							<td width="16">
-								<img src="http://localhost:8080/crm/resource/images/tab_20.gif" width="16"
-									height="35" />
-							</td>
+{#							<td width="16">#}
+{#								<img src="/static/tab_20.gif" width="12"#}
+{#									height="35" />#}
+{#							</td>#}
 						</tr>
 					</table>
 				</td>
 			</tr>
 		</table>
-		</form>
+    </form>
 	</body>
 </html>

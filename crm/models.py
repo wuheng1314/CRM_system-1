@@ -157,7 +157,7 @@ class EmailInfo(models.Model):
 
 class HouseInfo(models.Model):
     house_id = models.AutoField(primary_key=True)
-    type = models.ForeignKey('HouseType', models.DO_NOTHING, blank=True, null=True)
+    type = models.ForeignKey('HouseType', models.DO_NOTHING, blank=True, null=True,)
     user = models.ForeignKey('UserInfo', models.DO_NOTHING, blank=True, null=True)
     house_address = models.CharField(max_length=500, blank=True, null=True)
     house_price = models.IntegerField(blank=True, null=True)
@@ -177,7 +177,6 @@ class HouseType(models.Model):
     class Meta:
         
         db_table = 'house_type'
-
 
 class NoticeInfo(models.Model):
     notice_id = models.AutoField(primary_key=True)
